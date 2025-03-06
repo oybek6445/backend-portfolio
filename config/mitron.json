@@ -1,1 +1,8 @@
-[{"Ism":"Oybek","email":"oybek887700343@gmail.com","xabar":"Hello world","id":1}]
+[
+    {
+        "Ism":"Oybek",
+        "email":"oybek887700343@gmail.com",
+        "xabar":"Hello world",
+        "id":1
+    }
+    ,{"Ism":"O","email":"O@gmail.com","xabar":"O","id":1},{"Ism":"O","email":"O@gmail.com","xabar":"O","id":2},{"Ism":"O","email":"O@gmail.com","xabar":"O","id":3}]

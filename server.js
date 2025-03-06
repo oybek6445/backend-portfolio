@@ -1,5 +1,12 @@
-const app = require('./middleware/app.js')
+const connectDB = require("./config/mitron");
+const app = require("./middleware/app");
 
-app.listen(3000, ()=>{
-    console.log('server ishladi')
-})
+require("dotenv").config();
+
+
+connectDB();
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server ${PORT} portda ishga tushdi`);
+});
