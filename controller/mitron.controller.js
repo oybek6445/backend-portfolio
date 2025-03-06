@@ -27,6 +27,38 @@ const writeMessage = async (req, res) => {
     }
 };
 
+const messageById = async (req, res)=>{
+    try{
+        let id = req.params.id
+        const messages = await Contact.findById(id)
+        res.status(200).json({data : messages})
+    }catch(err){
+        res.status(404).send(`404 Not Found`)
+    }
+}
+
+const deleteById = async (req,res)=>{
+    try{
+        let id = req.params.id  
+        const message = await Contact.findByIdAndDelete(id)
+
+    }
+    catch{
+
+    }
+}
+
+const updateById = async (req, res) => {
+    try {
+        let id = req.params.id;
+        let updateData = req.body; 
+
+        const updatedMessage = await Contact.findByIdAndUpdate(id, updateData, { new: true });
+        res.status(201).json({ message: "updated data", data: updatedMessage });
+    } catch (err) {
+        console.log(err.message)
+    }
+};
 
 
 
@@ -53,5 +85,8 @@ module.exports = {
     renderData,
     writeData,
     writeMessage,
-    renderMessage
+    renderMessage,
+    messageById,
+    deleteById,
+    updateById
 };
